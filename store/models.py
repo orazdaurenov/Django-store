@@ -59,12 +59,6 @@ class Customer(models.Model):
     order = models.ForeignKey(
         Order, on_delete=models.CASCADE, related_name='+')
 
-    class Meta:
-        db_table = 'store_customers'
-        indexes = [
-            models.Index(fields=['last_name', 'first_name'])
-        ]
-
 
 class Address(models.Model):
     street = models.CharField(max_length=255)
